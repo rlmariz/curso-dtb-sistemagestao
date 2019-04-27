@@ -35,8 +35,10 @@ namespace DataBelli.SistemaGestao.Controllers
 
         // POST: api/Beneficiario
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Beneficiario beneficiario)
         {
+            context.Beneficiarios.Add(beneficiario);
+            context.SaveChanges();
         }
 
         // PUT: api/Beneficiario/5
